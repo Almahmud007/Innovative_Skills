@@ -1,6 +1,8 @@
+# Question Answer of Inheritance
+
 import math
 
-class AreaCalculatorMixin:
+class AreaCalculatorAll:
     def calculate_circle_area(self, radius):
         return math.pi * radius ** 2
 
@@ -10,14 +12,14 @@ class AreaCalculatorMixin:
     def calculate_triangle_area(self, base, height):
         return 0.5 * base * height
 
-class Circle(AreaCalculatorMixin):
+class Circle(AreaCalculatorAll):
     def __init__(self):
         self.radius = float(input("Enter the radius of the circle: "))
 
     def calculate_area(self):
         return self.calculate_circle_area(self.radius)
 
-class Rectangle(AreaCalculatorMixin):
+class Rectangle(AreaCalculatorAll):
     def __init__(self):
         self.length = float(input("Enter the length of the rectangle: "))
         self.width = float(input("Enter the width of the rectangle: "))
@@ -25,7 +27,7 @@ class Rectangle(AreaCalculatorMixin):
     def calculate_area(self):
         return self.calculate_rectangle_area(self.length, self.width)
 
-class Triangle(AreaCalculatorMixin):
+class Triangle(AreaCalculatorAll):
     def __init__(self):
         self.base = float(input("Enter the base of the triangle: "))
         self.height = float(input("Enter the height of the triangle: "))
